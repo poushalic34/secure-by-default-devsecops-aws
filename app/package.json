@@ -1,1 +1,11 @@
-
+{
+  "name": "secure-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node test.js",
+    "audit": "npm audit --audit-level=high"
+  },
+  "dependencies": {
+    "lodash": "4.17.19"
+  }
+}
