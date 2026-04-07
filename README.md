@@ -1,8 +1,6 @@
-# secure-by-default-devsecops-aws
-
 # Secure by Default: DevSecOps Pipeline on AWS + JFrog
 
-## 🔥 Overview
+## Overview
 This project demonstrates a secure-by-default CI/CD pipeline using:
 
 - AWS CodePipeline
@@ -11,7 +9,7 @@ This project demonstrates a secure-by-default CI/CD pipeline using:
 - AWS Secrets Manager
 - JFrog Artifactory & Xray
 
-## 🧱 Pipeline Stages
+## Pipeline Stages
 
 1. Source (GitHub)
 2. Build & Test
@@ -19,7 +17,7 @@ This project demonstrates a secure-by-default CI/CD pipeline using:
 4. Artifact Upload (JFrog)
 5. Policy Enforcement
 
-## 🔐 Security Features
+## Security Features
 
 - Dependency scanning (npm audit)
 - Secret detection
@@ -27,12 +25,12 @@ This project demonstrates a secure-by-default CI/CD pipeline using:
 - Secrets stored in AWS Secrets Manager
 - JFrog Xray integration
 
-## 🚀 Demo Flow
+## Demo Flow
 
 - Push vulnerable code → pipeline fails
 - Fix dependency → pipeline passes
 - Artifact uploaded to JFrog
 
-## 💡 Key Idea
+## Key Idea
 
 Security is enforced automatically with zero developer friction.
