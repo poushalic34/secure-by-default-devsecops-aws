@@ -1,1 +1,37 @@
+version: 0.2
 
+env:
+  secrets-manager:
+    JFROG_TOKEN: "jfrog-token-secret"
+    JFROG_URL: "jfrog-url-secret"
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - echo "Installing dependencies..."
+      - cd app
+      - npm install
+      - cd ..
+
+  build:
+    commands:
+      - echo "Running tests..."
+      - cd app
+      - npm test
+
+      - echo "Running security scan..."
+      - chmod +x ../scripts/security-scan.sh
+      - ../scripts/security-scan.sh
+      - cd ..
+
+  post_build:
+    commands:
+      - echo "Running JFrog upload..."
+      - chmod +x scripts/jfrog-upload.sh
+      - ./scripts/jfrog-upload.sh || echo "Skipping JFrog (demo mode)"
+
+artifacts:
+  files:
+    - '**/*'
